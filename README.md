@@ -1,4 +1,6 @@
 ### Hi there 👋
+## I like AI drawing
+#I wish I can find other AI chanting masters to jump into this area
 
 <!--
 **ThanatosJun/ThanatosJun** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
