@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thanatos | Personal Portfolio</title>
+  <link rel="icon" type="image/png" href="images/avatar.png" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;700&family=Zen+Maru+Gothic:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ✦ 星空粒子背景 -->
+  <canvas id="starfield"></canvas>
+
+  <!-- ✦ 導覽列 -->
+  <nav class="navbar">
+    <div class="nav-logo">Thanatos</div>
+    <ul class="nav-links">
+      <li><a href="#hero">首頁</a></li>
+      <li><a href="#about">關於</a></li>
+      <li><a href="#projects">作品集</a></li>
+      <li><a href="#showreel">影片</a></li>
+      <li><a href="#poetry">新詩</a></li>
+      <li><a href="#contact">聯絡</a></li>
+    </ul>
+    <!-- 背景音樂控制 -->
+    <button id="music-toggle" class="music-btn" aria-label="Toggle Music">
+      <span class="music-icon">♪</span>
+      <span class="music-status">OFF</span>
+    </button>
+  </nav>
+
+  <!-- ✦ Hero 區 -->
+  <section id="hero" class="hero">
+    <div class="hero-content">
+      <div class="hero-avatar">
+        <img src="images/avatar.png" alt="Thanatos" class="avatar-img" />
+      </div>
+      <h1 class="hero-title">
+        <span class="greeting">こんにちは、</span>
+        <span class="name-text">I'm <span class="highlight">Thanatos</span></span>
+      </h1>
+      <p class="hero-subtitle">歡迎來到我的個人空間</p>
+      <div class="hero-tags">
+        <span class="tag">Developer</span>
+        <span class="tag">Creator</span>
+        <span class="tag">Explorer</span>
+      </div>
+      <a href="#projects" class="cta-btn">探索作品 ↓</a>
+    </div>
+    <!-- 裝飾性流星 -->
+    <div class="shooting-stars">
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+    </div>
+  </section>
+
+  <!-- ✦ 個人介紹區 -->
+  <section id="about" class="about">
+    <h2 class="section-title">
+      <span class="title-jp">自己紹介</span>
+      <span class="title-en">About</span>
+    </h2>
+    <div class="about-content" id="about-content">
+      <!-- 由 JS 從 data/about.json 動態載入 -->
+    </div>
+  </section>
+
+  <!-- ✦ 作品集區 -->
+  <section id="projects" class="projects">
+    <h2 class="section-title">
+      <span class="title-jp">作品集</span>
+      <span class="title-en">Projects</span>
+    </h2>
+    <div class="projects-grid" id="projects-grid">
+      <!-- 專案卡片由 JS 從 data/projects.json 動態載入 -->
+    </div>
+  </section>
+
+  <!-- ✦ 影片展示區 -->
+  <section id="showreel" class="showreel">
+    <h2 class="section-title">
+      <span class="title-jp">影片展示</span>
+      <span class="title-en">Showreel</span>
+    </h2>
+    <div class="video-showcase" id="video-showcase">
+      <!-- 影片由 JS 從 data/projects.json 動態載入 -->
+    </div>
+  </section>
+
+  <!-- ✦ 新詩專欄 -->
+  <section id="poetry" class="poetry">
+    <h2 class="section-title">
+      <span class="title-jp">新詩</span>
+      <span class="title-en">Poetry</span>
+    </h2>
+    <div class="poetry-grid" id="poetry-grid">
+      <!-- 詩作由 JS 從 data/poems.json 動態載入 -->
+    </div>
+  </section>
+
+  <!-- ✦ 聯絡區 -->
+  <section id="contact" class="contact">
+    <h2 class="section-title">
+      <span class="title-jp">連絡先</span>
+      <span class="title-en">Contact</span>
+    </h2>
+    <p class="contact-desc">有任何想法或合作機會，歡迎聯繫我。</p>
+    <div class="social-links">
+      <a href="https://gist.github.com/ThanatosJun" target="_blank" class="social-link github">
+        <svg viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.083-.73.083-.73 1.205.085 1.84 1.237 1.84 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.776.418-1.305.762-1.605-2.665-.3-5.467-1.332-5.467-5.93 0-1.31.468-2.382 1.235-3.22-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.3 1.23A11.5 11.5 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.29-1.552 3.297-1.23 3.297-1.23.653 1.652.242 2.873.118 3.176.77.838 1.234 1.91 1.234 3.22 0 4.61-2.807 5.625-5.48 5.92.43.372.823 1.102.823 2.222 0 1.606-.015 2.898-.015 3.293 0 .322.216.694.825.576C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12z"/></svg>
+        <span>GitHub</span>
+      </a>
+      <a href="https://www.instagram.com/thanatos_jun" target="_blank" class="social-link instagram">
+        <svg viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M12 2.163c3.204 0 3.584.012 4.85.07 1.17.054 1.97.24 2.43.403a4.088 4.088 0 011.523.99 4.088 4.088 0 01.99 1.524c.163.46.349 1.26.403 2.43.058 1.265.07 1.645.07 4.849s-.012 3.584-.07 4.85c-.054 1.17-.24 1.97-.403 2.43a4.088 4.088 0 01-.99 1.523 4.088 4.088 0 01-1.524.99c-.46.163-1.26.349-2.43.403-1.265.058-1.645.07-4.849.07s-3.584-.012-4.85-.07c-1.17-.054-1.97-.24-2.43-.403a4.088 4.088 0 01-1.523-.99 4.088 4.088 0 01-.99-1.524c-.163-.46-.349-1.26-.403-2.43C2.175 15.747 2.163 15.367 2.163 12s.012-3.584.07-4.85c.054-1.17.24-1.97.403-2.43a4.088 4.088 0 01.99-1.523A4.088 4.088 0 015.15 2.636c.46-.163 1.26-.349 2.43-.403C8.845 2.175 9.225 2.163 12 2.163M12 0C8.741 0 8.333.014 7.053.072 5.775.13 4.902.333 4.14.63a5.876 5.876 0 00-2.126 1.384A5.876 5.876 0 00.63 4.14C.333 4.902.13 5.775.072 7.053.014 8.333 0 8.741 0 12s.014 3.667.072 4.947c.058 1.278.261 2.151.558 2.913a5.876 5.876 0 001.384 2.126A5.876 5.876 0 004.14 23.37c.762.297 1.635.5 2.913.558C8.333 23.986 8.741 24 12 24s3.667-.014 4.947-.072c1.278-.058 2.151-.261 2.913-.558a5.876 5.876 0 002.126-1.384 5.876 5.876 0 001.384-2.126c.297-.762.5-1.635.558-2.913.058-1.28.072-1.688.072-4.947s-.014-3.667-.072-4.947c-.058-1.278-.261-2.151-.558-2.913a5.876 5.876 0 00-1.384-2.126A5.876 5.876 0 0019.86.63c-.762-.297-1.635-.5-2.913-.558C15.667.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 11-2.88 0 1.44 1.44 0 012.88 0z"/></svg>
+        <span>Instagram</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ✦ Footer -->
+  <footer class="footer">
+    <p>© 2026 Thanatos · Built with ✦</p>
+  </footer>
+
+  <!-- 背景音樂（預留） -->
+  <audio id="bg-music" loop preload="none">
+    <source src="audio/background-music.mp3" type="audio/mpeg" />
+  </audio>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

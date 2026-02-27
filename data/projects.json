@@ -1,0 +1,75 @@
+{
+  "projects": [
+    {
+      "title": "Anime-Imprimatura 漫塗",
+      "description": "AI 輔助 2D 動畫角色底色上色工具。上傳角色設計稿與線稿，自動生成底色完稿，大幅提升動畫製作效率。",
+      "tags": ["Python", "PyTorch", "YOLOv8", "Node.js"],
+      "images": [
+        { "src": "images/anime-imprimatura-cover.png", "alt": "Anime-Imprimatura 漫塗 桌布" },
+        { "src": "images/anime-imprimatura-result.png", "alt": "Anime-Imprimatura 完稿圖" }
+      ],
+      "links": [
+        { "label": "GitHub ↗", "url": "https://github.com/ThanatosJun/Anime-Imprimatura" },
+        { "label": "Demo Video ↗", "url": "https://youtu.be/OfGPD1aC1yY" }
+      ],
+      "qr": {
+        "src": "images/qr-anime-imprimatura.png",
+        "alt": "Anime-Imprimatura YouTube QR Code",
+        "url": "https://youtu.be/OfGPD1aC1yY"
+      }
+    },
+    {
+      "title": "CL_Graduated",
+      "description": "全端畢業專題，使用 Laravel + Vue.js 打造的 Web 應用系統，搭配 MySQL 資料庫管理。",
+      "tags": ["Vue", "PHP", "Laravel", "MySQL"],
+      "images": [
+        { "src": "images/cl-graduated-cover.png", "alt": "CL_Graduated 文字森林" }
+      ],
+      "links": [
+        { "label": "GitHub ↗", "url": "https://github.com/ThanatosJun/CL_Graduated" }
+      ]
+    },
+    {
+      "title": "LoveGame 戀愛之旅",
+      "description": "Flutter 開發的互動戀愛小遊戲，包含角色互動、戀愛問答測驗與占卜系統，程式概論期末專案。",
+      "tags": ["Dart", "Flutter"],
+      "placeholder": "💕",
+      "links": [
+        { "label": "Demo ↗", "url": "https://dartpad.dev/embed-flutter_showcase.html?run=true&id=24ac5c31c06cfc5ceb54525930e33d41" },
+        { "label": "Gist ↗", "url": "https://gist.github.com/ThanatosJun/24ac5c31c06cfc5ceb54525930e33d41" }
+      ],
+      "qr": {
+        "src": "images/qr-lovegame.png",
+        "alt": "LoveGame QR Code",
+        "url": "https://dartpad.dev/embed-flutter_showcase.html?run=true&id=24ac5c31c06cfc5ceb54525930e33d41"
+      }
+    },
+    {
+      "title": "FlyShoot 飛機戰鬥",
+      "description": "Unity 開發的飛機射擊遊戲，簡單的小作業。",
+      "tags": ["Unity", "C#", "ShaderLab"],
+      "placeholder": "🎮",
+      "links": [
+        { "label": "Demo ↗", "url": "https://thanatosjun.itch.io/flyshoot-v1" },
+        { "label": "GitHub ↗", "url": "https://github.com/ThanatosJun/2025Unity-class0-FlyShoot" }
+      ]
+    },
+    {
+      "title": "2DColorGAN",
+      "description": "基於 CGAN 生成對抗網路的 2D 動畫自動上色模型，探索深度學習在創作領域的應用。",
+      "tags": ["Python", "GAN", "Deep Learning"],
+      "placeholder": "🤖",
+      "links": [
+        { "label": "GitHub ↗", "url": "https://github.com/ThanatosJun/2DColorGAN" }
+      ]
+    }
+  ],
+  "videos": [
+    {
+      "title": "同遊萬聖城",
+      "description": "為了邀大家出去，用 Suno 與剪映做的簡單歌曲~",
+      "src": "video/HalloweenCity_Simpe.mp4",
+      "poster": ""
+    }
+  ]
+}
