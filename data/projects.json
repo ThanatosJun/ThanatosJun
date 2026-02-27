@@ -33,7 +33,9 @@
       "title": "LoveGame 戀愛之旅",
       "description": "Flutter 開發的互動戀愛小遊戲，包含角色互動、戀愛問答測驗與占卜系統，程式概論期末專案。",
       "tags": ["Dart", "Flutter"],
-      "placeholder": "💕",
+      "images": [
+        { "src": "images/love-game.png", "alt": "LoveGame 戀愛之旅遊戲畫面" }
+      ],
       "links": [
         { "label": "Demo ↗", "url": "https://dartpad.dev/embed-flutter_showcase.html?run=true&id=24ac5c31c06cfc5ceb54525930e33d41" },
         { "label": "Gist ↗", "url": "https://gist.github.com/ThanatosJun/24ac5c31c06cfc5ceb54525930e33d41" }
@@ -48,7 +50,9 @@
       "title": "FlyShoot 飛機戰鬥",
       "description": "Unity 開發的飛機射擊遊戲，簡單的小作業。",
       "tags": ["Unity", "C#", "ShaderLab"],
-      "placeholder": "🎮",
+      "images": [
+        { "src": "images/flyshoot-cover.png", "alt": "FlyShoot 飛機戰鬥遊戲畫面" }
+      ],
       "links": [
         { "label": "Demo ↗", "url": "https://thanatosjun.itch.io/flyshoot-v1" },
         { "label": "GitHub ↗", "url": "https://github.com/ThanatosJun/2025Unity-class0-FlyShoot" }
@@ -58,7 +62,9 @@
       "title": "2DColorGAN",
       "description": "基於 CGAN 生成對抗網路的 2D 動畫自動上色模型，探索深度學習在創作領域的應用。",
       "tags": ["Python", "GAN", "Deep Learning"],
-      "placeholder": "🤖",
+      "images": [
+        { "src": "images/2dcolorgan-cover.png", "alt": "2DColorGAN 生成結果" }
+      ],
       "links": [
         { "label": "GitHub ↗", "url": "https://github.com/ThanatosJun/2DColorGAN" }
       ]

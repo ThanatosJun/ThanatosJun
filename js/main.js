@@ -249,8 +249,13 @@ function loadPoems() {
           return `<p${cls}>${s.lines.join('\n')}</p>`;
         }).join('\n          ');
 
+        const img = poem.image
+          ? `<img src="${poem.image}" alt="${poem.title}" class="poem-img" />`
+          : '';
+
         return `
       <article class="poem-card">
+        ${img}
         <h3 class="poem-title">${poem.title}</h3>
         <div class="poem-body">
           ${stanzas}
@@ -274,8 +279,8 @@ function loadProjects() {
         // 圖片區
         let imageHtml;
         if (p.images && p.images.length > 1) {
-          imageHtml = `<div class="card-image card-image-dual">${p.images.map(img =>
-            `<img src="${img.src}" alt="${img.alt}" loading="lazy" />`).join('')}</div>`;
+          imageHtml = `<div class="card-image card-slideshow">${p.images.map((img, i) =>
+            `<img src="${img.src}" alt="${img.alt}" loading="lazy" class="slide${i === 0 ? ' active' : ''}" />`).join('')}</div>`;
         } else if (p.images && p.images.length === 1) {
           imageHtml = `<div class="card-image"><img src="${p.images[0].src}" alt="${p.images[0].alt}" loading="lazy" /></div>`;
         } else {
@@ -305,10 +310,27 @@ function loadProjects() {
       </div>`;
       }).join('');
 
+      // 啟動多圖輪播
+      initSlideshows();
+
       // 重新綁定滾動動畫
       initScrollAnimations();
     })
     .catch(err => console.warn('專案載入失敗:', err));
+}
+
+/* ───────── 多圖自動輪播 ───────── */
+function initSlideshows() {
+  document.querySelectorAll('.card-slideshow').forEach(container => {
+    const slides = container.querySelectorAll('.slide');
+    if (slides.length < 2) return;
+    let current = 0;
+    setInterval(() => {
+      slides[current].classList.remove('active');
+      current = (current + 1) % slides.length;
+      slides[current].classList.add('active');
+    }, 3000);
+  });
 }
 
 /* ───────── 從 JSON 動態載入影片 ───────── */

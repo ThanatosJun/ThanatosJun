@@ -241,6 +241,14 @@ a {
   box-shadow: 0 12px 40px rgba(108, 92, 231, 0.12);
 }
 
+.poem-img {
+  width: 100%;
+  height: 220px;
+  border-radius: 12px;
+  margin-bottom: 1.2rem;
+  object-fit: cover;
+}
+
 .poem-title {
   font-family: var(--font-jp);
   font-size: 1.3rem;
@@ -708,16 +716,24 @@ a:hover {
   color: var(--accent-blue);
 }
 
-/* ---------- Dual Card Image ---------- */
-.card-image-dual {
-  display: flex;
-  gap: 0;
+/* ---------- Slideshow Card Image ---------- */
+.card-slideshow {
+  position: relative;
 }
 
-.card-image-dual img {
-  width: 50%;
+.card-slideshow img.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
   height: 100%;
   object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.card-slideshow img.slide.active {
+  opacity: 1;
 }
 
 /* ---------- QR Code ---------- */
@@ -895,10 +911,6 @@ a:hover {
   }
 
   .card-image {
-    height: 150px;
-  }
-
-  .card-image-dual img {
     height: 150px;
   }
 
