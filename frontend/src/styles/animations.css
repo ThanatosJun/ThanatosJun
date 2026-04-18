@@ -1,24 +1,222 @@
-/* GSAP 開場動畫 */
+/* ── Opening Animation ── */
+
 .opening-overlay {
   position: fixed;
   inset: 0;
   z-index: 9999;
-  background-color: var(--bg-dark);
+  overflow: hidden;
+  cursor: pointer;
 }
 
-.opening-curtain-left,
-.opening-curtain-right {
+.opening-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Curtains */
+.opening-curtain {
   position: absolute;
   top: 0;
   bottom: 0;
   width: 50%;
-  background-color: #05051a;
+  background: linear-gradient(160deg, #0d0d26 0%, #0a0a1a 60%, #07071a 100%);
+  z-index: 1;
 }
-
 .opening-curtain-left  { left: 0; }
 .opening-curtain-right { right: 0; }
 
-/* Live2D 畫布定位 */
+/* Curtain inner glow edge */
+.opening-curtain-left::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(180deg, transparent, rgba(108,92,231,0.6), rgba(116,185,255,0.4), transparent);
+}
+.opening-curtain-right::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(180deg, transparent, rgba(108,92,231,0.6), rgba(116,185,255,0.4), transparent);
+}
+
+/* ── Floating Geometric Shapes ── */
+.opening-shapes {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.shape {
+  position: absolute;
+}
+
+.shape-hex {
+  background: linear-gradient(135deg, rgba(108,92,231,0.15), rgba(116,185,255,0.05));
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  border-radius: 2px;
+}
+
+.shape-circle {
+  border-radius: 50%;
+  border: 1px solid rgba(116,185,255,0.2);
+  background: radial-gradient(circle, rgba(116,185,255,0.05), transparent);
+}
+
+.shape-diamond {
+  background: linear-gradient(135deg, rgba(253,121,168,0.12), rgba(108,92,231,0.06));
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+
+/* Individual shapes — left side */
+.shape-1 {
+  width: 90px; height: 104px;
+  top: 12%; left: 8%;
+  animation: float-a 9s ease-in-out infinite;
+  opacity: 0.7;
+}
+.shape-2 {
+  width: 50px; height: 58px;
+  top: 55%; left: 6%;
+  animation: float-b 11s ease-in-out infinite;
+  opacity: 0.5;
+}
+.shape-3 {
+  width: 30px; height: 30px;
+  top: 35%; left: 18%;
+  animation: float-c 7s ease-in-out infinite;
+  opacity: 0.6;
+}
+
+/* Individual shapes — right side */
+.shape-4 {
+  width: 110px; height: 110px;
+  top: 10%; right: 8%;
+  animation: float-b 8s ease-in-out infinite;
+  opacity: 0.5;
+}
+.shape-5 {
+  width: 55px; height: 64px;
+  top: 60%; right: 6%;
+  animation: float-a 12s ease-in-out infinite reverse;
+  opacity: 0.6;
+}
+.shape-6 {
+  width: 40px; height: 40px;
+  top: 30%; right: 20%;
+  animation: float-c 10s ease-in-out infinite reverse;
+  opacity: 0.4;
+}
+.shape-7 {
+  width: 25px; height: 29px;
+  bottom: 20%; left: 22%;
+  animation: float-b 8s ease-in-out infinite;
+  opacity: 0.5;
+}
+.shape-8 {
+  width: 70px; height: 70px;
+  bottom: 18%; right: 15%;
+  animation: float-a 13s ease-in-out infinite;
+  opacity: 0.35;
+}
+
+@keyframes float-a {
+  0%, 100% { transform: translateY(0)    rotate(0deg); }
+  50%       { transform: translateY(-18px) rotate(12deg); }
+}
+@keyframes float-b {
+  0%, 100% { transform: translateY(0)   rotate(0deg); }
+  50%       { transform: translateY(14px) rotate(-10deg); }
+}
+@keyframes float-c {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50%       { transform: translateY(-10px) scale(1.08); }
+}
+
+/* ── Center Content ── */
+.opening-center {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 0.8rem;
+  padding: 2rem;
+  pointer-events: none;
+}
+
+.opening-icon {
+  font-size: 1.8rem;
+  color: var(--accent-purple);
+  text-shadow: 0 0 24px var(--accent-purple);
+  animation: icon-pulse 2.5s ease-in-out infinite;
+  margin-bottom: 0.4rem;
+}
+
+@keyframes icon-pulse {
+  0%, 100% { opacity: 0.75; transform: scale(1); }
+  50%       { opacity: 1;    transform: scale(1.15); }
+}
+
+.opening-title-en {
+  display: block;
+  font-family: var(--font-jp);
+  font-size: clamp(2.2rem, 6vw, 4.5rem);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--text-primary);
+  text-shadow: 0 0 40px var(--glow-purple), 0 0 80px rgba(108,92,231,0.2);
+}
+
+.opening-title-jp {
+  display: block;
+  font-family: var(--font-jp);
+  font-size: clamp(0.85rem, 1.8vw, 1.15rem);
+  color: var(--text-secondary);
+  letter-spacing: 0.35em;
+  margin-top: 0.3rem;
+}
+
+.opening-divider {
+  width: 140px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent-blue), transparent);
+  margin: 0.6rem auto;
+  box-shadow: 0 0 8px var(--glow-blue);
+}
+
+.opening-subtitle {
+  font-size: 0.78rem;
+  letter-spacing: 0.45em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.opening-enter {
+  margin-top: 1.4rem;
+  font-size: 0.88rem;
+  letter-spacing: 0.15em;
+  color: var(--accent-blue);
+  animation: enter-blink 2s ease-in-out infinite;
+}
+
+@keyframes enter-blink {
+  0%, 100% { opacity: 0.35; }
+  50%       { opacity: 1; }
+}
+
+/* ── Live2D ── */
 .live2d-container {
   position: fixed;
   bottom: 0;
@@ -28,7 +226,6 @@
   pointer-events: none;
   z-index: 10;
 }
-
 .live2d-container canvas {
   width: 100%;
   height: 100%;

@@ -11,7 +11,8 @@
       "Bash(python -c \"import sys,json; [print\\(f['type'], f['name']\\) for f in json.load\\(sys.stdin\\)]\")",
       "Bash(curl -s \"https://raw.githubusercontent.com/bmad-code-org/BMAD-METHOD/main/src/core-skills/bmad-help/SKILL.md\")",
       "Bash(curl -s \"https://api.github.com/repos/bmad-code-org/BMAD-METHOD\")",
-      "Bash(curl -s \"https://api.github.com/repos/bmad-code-org/BMAD-METHOD/releases/latest\")"
+      "Bash(curl -s \"https://api.github.com/repos/bmad-code-org/BMAD-METHOD/releases/latest\")",
+      "Bash(npm install *)"
     ]
   }
 }

@@ -1,23 +1,39 @@
 @import "tailwindcss";
 
 :root {
+  --bg-deep:       #0a0a1a;
+  --bg-mid:        #0f0f2d;
+  --bg-card:       #16163a;
   --accent-purple: #6c5ce7;
-  --accent-blue: #74b9ff;
-  --accent-pink: #fd79a8;
-  --bg-dark: #0a0a1a;
-  --text-primary: #f0f0f0;
-  --text-secondary: #a0a0c0;
+  --accent-blue:   #74b9ff;
+  --accent-pink:   #fd79a8;
+  --text-primary:  #e8e8f0;
+  --text-secondary:#a0a0c0;
+  --text-muted:    #6a6a90;
+  --glow-purple:   rgba(108, 92, 231, 0.4);
+  --glow-blue:     rgba(116, 185, 255, 0.3);
+  --font-jp:       'Zen Maru Gothic', 'Noto Sans TC', sans-serif;
+  --font-main:     'Noto Sans TC', 'Zen Maru Gothic', sans-serif;
 }
 
-body {
-  background-color: var(--bg-dark);
-  color: var(--text-primary);
-  font-family: 'Noto Sans TC', sans-serif;
+*, *::before, *::after {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-main);
+  background: var(--bg-deep);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  line-height: 1.6;
 }
 
 .loading-screen {
   width: 100vw;
   height: 100vh;
-  background-color: var(--bg-dark);
+  background: var(--bg-deep);
 }
