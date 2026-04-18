@@ -1,0 +1,36 @@
+# Dependencies
+node_modules/
+.venv/
+__pycache__/
+*.pyc
+
+# Environment
+.env
+*.env.local
+
+# Build outputs
+dist/
+build/
+.vite/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Runtime data
+*.sqlite
+*.db
+
+# Docker volumes (local)
+.docker/
+
+# Live2D SDK（已複製所需檔案至 frontend/）
+CubismSdkForWeb-5-r.5/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/

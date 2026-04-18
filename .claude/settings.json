@@ -1,0 +1,23 @@
+{
+  "language": "traditional chinese",
+  "permissions": {
+    "allow": [
+      "Bash(git *)",
+      "Bash(python *)",
+      "Bash(python3 *)",
+      "Bash(pip *)",
+      "Bash(pip3 *)",
+      "Bash(mkdir *)",
+      "Bash(mv *)",
+      "Bash(cp *)",
+      "Bash(rm *)",
+      "Bash(find *)",
+      "Bash(ls *)",
+      "Bash(echo *)",
+      "Bash(bash *)",
+      "Bash(sh *)",
+      "Bash(npx *)",
+      "Bash(node *)"
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -s \"https://raw.githubusercontent.com/anthropics/skills/main/skills/web-artifacts-builder/SKILL.md\")",
+      "Bash(mkdir -p d:/Project/GitOwnProjects/ThanatosJun/.claude/skills/webapp-testing/scripts d:/Project/GitOwnProjects/ThanatosJun/.claude/skills/webapp-testing/examples)",
+      "Bash(curl -s \"https://raw.githubusercontent.com/anthropics/skills/main/skills/webapp-testing/scripts/with_server.py\")",
+      "Bash(curl -s \"https://raw.githubusercontent.com/anthropics/skills/main/skills/webapp-testing/examples/console_logging.py\")",
+      "Bash(curl -s \"https://raw.githubusercontent.com/anthropics/skills/main/skills/webapp-testing/examples/element_discovery.py\")",
+      "Bash(curl -s \"https://raw.githubusercontent.com/anthropics/skills/main/skills/webapp-testing/examples/static_html_automation.py\")",
+      "Bash(curl -s \"https://api.github.com/repos/bmad-code-org/BMAD-METHOD/contents/src/bmm-skills/1-analysis\")",
+      "Bash(python -c \"import sys,json; [print\\(f['type'], f['name']\\) for f in json.load\\(sys.stdin\\)]\")",
+      "Bash(curl -s \"https://raw.githubusercontent.com/bmad-code-org/BMAD-METHOD/main/src/core-skills/bmad-help/SKILL.md\")",
+      "Bash(curl -s \"https://api.github.com/repos/bmad-code-org/BMAD-METHOD\")",
+      "Bash(curl -s \"https://api.github.com/repos/bmad-code-org/BMAD-METHOD/releases/latest\")"
+    ]
+  }
+}

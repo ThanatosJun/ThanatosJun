@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+:root {
+  --accent-purple: #6c5ce7;
+  --accent-blue: #74b9ff;
+  --accent-pink: #fd79a8;
+  --bg-dark: #0a0a1a;
+  --text-primary: #f0f0f0;
+  --text-secondary: #a0a0c0;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-primary);
+  font-family: 'Noto Sans TC', sans-serif;
+  margin: 0;
+}
+
+.loading-screen {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--bg-dark);
+}
