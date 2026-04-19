@@ -1,1 +1,0 @@
-import{j as a,H as e}from"./index-CGD8eBDR.js";import{N as r}from"./Navbar-JYmZ_GHL.js";import{S as s}from"./SpacePlaceholder-DVUDnS-t.js";function n(){return a.jsxs(a.Fragment,{children:[a.jsx(e,{children:a.jsx("title",{children:"ThanatosJun — 旅遊之路"})}),a.jsx(r,{}),a.jsx(s,{spaceName:"旅遊之路"})]})}export{n as default};
