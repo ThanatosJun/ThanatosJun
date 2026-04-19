@@ -1,5 +1,5 @@
 import { lazy, Suspense } from 'react'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { HashRouter, Routes, Route } from 'react-router-dom'
 import ProtectedRoute from './components/layout/ProtectedRoute'
 
 const StarNight    = lazy(() => import('./pages/StarNight'))
@@ -14,7 +14,7 @@ const ArticleEditor  = lazy(() => import('./pages/admin/ArticleEditor'))
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Suspense fallback={<div className="loading-screen" />}>
         <Routes>
           <Route path="/" element={<StarNight />} />
@@ -30,6 +30,6 @@ export default function App() {
           </Route>
         </Routes>
       </Suspense>
-    </BrowserRouter>
+    </HashRouter>
   )
 }

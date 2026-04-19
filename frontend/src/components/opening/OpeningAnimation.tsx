@@ -1,6 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { gsap } from 'gsap'
-import '../../styles/animations.css'
 
 interface Star {
   x: number
@@ -21,6 +20,15 @@ export default function OpeningAnimation() {
   const rafRef    = useRef<number>(0)
   const [clicked, setClicked] = useState(false)
   const [visible, setVisible] = useState(true)
+
+  useEffect(() => {
+    const reset = () => {
+      setClicked(false)
+      setVisible(true)
+    }
+    window.addEventListener('app:show-opening', reset)
+    return () => window.removeEventListener('app:show-opening', reset)
+  }, [])
 
   useEffect(() => {
     const canvas = canvasRef.current
@@ -100,6 +108,7 @@ export default function OpeningAnimation() {
     setClicked(true)
 
     starsRef.current.forEach(s => { s.speed *= 8 })
+    window.dispatchEvent(new Event('app:interaction'))
 
     gsap.timeline({ onComplete: () => setVisible(false) })
       .to(centerRef.current, {
