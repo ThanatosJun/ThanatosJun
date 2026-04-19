@@ -1,0 +1,1 @@
+import{j as r,H as e}from"./index-CGD8eBDR.js";import{N as s}from"./Navbar-JYmZ_GHL.js";function a(){return r.jsxs(r.Fragment,{children:[r.jsx(e,{children:r.jsx("title",{children:"ThanatosJun — 文章"})}),r.jsx(s,{}),r.jsx("main",{children:r.jsx("p",{children:"文章載入中…"})})]})}export{a as default};
