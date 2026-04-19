@@ -1,1 +1,0 @@
-import{j as e,H as r}from"./index-C3trakNe.js";import{N as a}from"./Navbar-DZ-GADRH.js";import{S as s}from"./SpacePlaceholder-DHL0QfTF.js";function m(){return e.jsxs(e.Fragment,{children:[e.jsx(r,{children:e.jsx("title",{children:"ThanatosJun — 科技之都"})}),e.jsx(a,{}),e.jsx(s,{spaceName:"科技之都"})]})}export{m as default};

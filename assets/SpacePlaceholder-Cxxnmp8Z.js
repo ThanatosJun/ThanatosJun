@@ -1,0 +1,1 @@
+import{j as e}from"./index-BrvXZrsa.js";function c({spaceName:s}){return e.jsx("main",{className:"flex items-center justify-center min-h-screen",children:e.jsxs("div",{className:"text-center opacity-40",children:[e.jsx("h1",{className:"text-4xl font-bold mb-4",children:s}),e.jsx("p",{children:"空間建構中，敬請期待"})]})})}export{c as S};

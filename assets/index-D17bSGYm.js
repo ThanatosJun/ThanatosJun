@@ -1,0 +1,1 @@
+import{j as r,H as a}from"./index-BrvXZrsa.js";import{N as e}from"./Navbar-BB8D8R4z.js";import{S as s}from"./SpacePlaceholder-Cxxnmp8Z.js";function o(){return r.jsxs(r.Fragment,{children:[r.jsx(a,{children:r.jsx("title",{children:"ThanatosJun — 書寫之牆"})}),r.jsx(e,{}),r.jsx(s,{spaceName:"書寫之牆"})]})}export{o as default};

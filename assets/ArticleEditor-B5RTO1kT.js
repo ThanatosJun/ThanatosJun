@@ -1,0 +1,1 @@
+import{j as s}from"./index-BrvXZrsa.js";function e(){return s.jsxs("main",{className:"p-8",children:[s.jsx("h1",{className:"text-2xl font-bold mb-4",children:"文章編輯器"}),s.jsx("p",{children:"功能開發中…"})]})}export{e as default};
