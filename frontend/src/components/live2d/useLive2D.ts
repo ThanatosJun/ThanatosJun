@@ -1,6 +1,5 @@
 import { useEffect, useState, type RefObject } from 'react'
 
-const MODEL_PATH = '/live2d/model/model.json'
 
 export function useLive2D(canvasRef: RefObject<HTMLCanvasElement | null>) {
   const [fallback, setFallback] = useState(false)
