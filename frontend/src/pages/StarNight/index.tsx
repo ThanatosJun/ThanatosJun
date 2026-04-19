@@ -4,6 +4,7 @@ import StarMap from '../../components/starmap/StarMap'
 import Live2DCanvas from '../../components/live2d/Live2DCanvas'
 import ChatPanel from '../../components/chat/ChatPanel'
 import Navbar from '../../components/layout/Navbar'
+import { asset } from '../../utils/asset'
 import './starnight.css'
 
 const projects = [
@@ -12,10 +13,10 @@ const projects = [
     title: 'Anime Imprimatura',
     titleJp: 'アニメ色彩研究',
     desc: '利用影像處理技術分析動漫作品的底色風格，重現特定動畫師的上色層次。',
-    cover: '/images/anime-imprimatura-cover.png',
-    result: '/images/anime-imprimatura-result.png',
+    cover: asset('images/anime-imprimatura-cover.png'),
+    result: asset('images/anime-imprimatura-result.png'),
     link: 'https://github.com/ThanatosJun/Anime-Imprimatura',
-    qr: '/images/qr-anime-imprimatura.png',
+    qr: asset('images/qr-anime-imprimatura.png'),
     tags: ['Python', 'OpenCV', 'Image Processing'],
   },
   {
@@ -23,7 +24,7 @@ const projects = [
     title: 'CL Graduated',
     titleJp: '卒業',
     desc: '以畢業為主題設計的互動式視覺作品，結合粒子動效與角色演出呈現告別情感。',
-    cover: '/images/cl-graduated-cover.png',
+    cover: asset('images/cl-graduated-cover.png'),
     link: 'https://github.com/ThanatosJun/CL_Graduated',
     tags: ['Creative Coding', 'p5.js', 'Animation'],
   },
@@ -32,9 +33,9 @@ const projects = [
     title: 'Love Game',
     titleJp: 'ラブゲーム',
     desc: '以戀愛模擬遊戲為靈感的互動作品，融合對話系統與分支劇情設計。',
-    cover: '/images/love-game.png',
+    cover: asset('images/love-game.png'),
     link: 'https://github.com/ThanatosJun/LoveGame',
-    qr: '/images/qr-lovegame.png',
+    qr: asset('images/qr-lovegame.png'),
     tags: ['Game Design', 'JavaScript', 'Narrative'],
   },
   {
@@ -42,7 +43,7 @@ const projects = [
     title: 'FlyShoot',
     titleJp: 'フライシュート',
     desc: '自製的彈幕射擊遊戲，包含自定義敵人 AI、BOSS 機制與音效整合。',
-    cover: '/images/flyshoot-cover.png',
+    cover: asset('images/flyshoot-cover.png'),
     link: 'https://github.com/ThanatosJun/FlyShoot',
     tags: ['Game Dev', 'C#', 'Unity'],
   },
@@ -51,7 +52,7 @@ const projects = [
     title: '2D Color GAN',
     titleJp: 'カラーGAN',
     desc: '基於 GAN 的 2D 自動上色系統，訓練模型將線稿轉換為完整彩色插圖。',
-    cover: '/images/2dcolorgan-cover.png',
+    cover: asset('images/2dcolorgan-cover.png'),
     link: 'https://github.com/ThanatosJun/2DColorGAN',
     tags: ['Deep Learning', 'GAN', 'PyTorch'],
   },
@@ -62,7 +63,7 @@ const poems = [
     id: 'nianlun',
     title: '年輪',
     titleJp: 'ねんりん',
-    img: '/images/poem-0.png',
+    img: asset('images/poem-0.png'),
     lines: [
       '每一道刻痕都是時間的重量',
       '樹木用沉默記錄成長',
@@ -73,7 +74,7 @@ const poems = [
     id: 'xuecheng',
     title: '雪城',
     titleJp: 'ゆきのまち',
-    img: '/images/poem-1.jpg',
+    img: asset('images/poem-1.jpg'),
     lines: [
       '城市蓋上一層白毯',
       '所有聲音都變得輕柔',
@@ -84,7 +85,7 @@ const poems = [
     id: 'buza',
     title: '不再',
     titleJp: 'もはや',
-    img: '/images/poem-2.jpg',
+    img: asset('images/poem-2.jpg'),
     lines: [
       '有些告別不需要儀式',
       '轉身的瞬間就已完成',
@@ -121,7 +122,7 @@ export default function StarNight() {
         <section className="sn-hero" id="hero">
           <div className="sn-hero-inner">
             <div className="sn-avatar-wrap">
-              <img src="/images/avatar.png" alt="Thanatos avatar" className="sn-avatar" />
+              <img src={asset('images/avatar.png')} alt="Thanatos avatar" className="sn-avatar" />
               <div className="sn-avatar-ring" />
             </div>
             <div className="sn-hero-text">
@@ -218,7 +219,7 @@ export default function StarNight() {
             <div className="sn-video-wrap">
               <video
                 className="sn-video"
-                src="/video/HalloweenCity_Simpe.mp4"
+                src={asset('video/HalloweenCity_Simpe.mp4')}
                 controls
                 playsInline
                 preload="metadata"

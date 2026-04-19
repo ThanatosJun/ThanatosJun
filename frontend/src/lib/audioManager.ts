@@ -1,4 +1,5 @@
-const audio = typeof window !== 'undefined' ? new Audio('/audio/background-music.mp3') : null
+const base = typeof window !== 'undefined' ? import.meta.env.BASE_URL : '/'
+const audio = typeof window !== 'undefined' ? new Audio(`${base}audio/background-music.mp3`) : null
 
 if (audio) {
   audio.loop = true

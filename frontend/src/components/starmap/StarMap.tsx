@@ -1,5 +1,6 @@
 import { useRef, useState, useCallback } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
+import { asset } from '../../utils/asset'
 import './starmap.css'
 
 interface Node {
@@ -23,7 +24,7 @@ const nodes: Node[] = [
     path: '/',
     label: '星夜之間',
     labelEn: 'Star Night',
-    img: '/images/starmap/node-starnight.png',
+    img: asset('images/starmap/node-starnight.png'),
     x: CENTER_X, y: CENTER_Y,
     isCenter: true,
     glowColor: '#c8d2ff',
@@ -33,7 +34,7 @@ const nodes: Node[] = [
     path: '/tech-city',
     label: '科技之都',
     labelEn: 'Tech City',
-    img: '/images/starmap/node-techcity.png',
+    img: asset('images/starmap/node-techcity.png'),
     x: 22, y: 20,
     glowColor: '#74b9ff',
   },
@@ -42,7 +43,7 @@ const nodes: Node[] = [
     path: '/culture-city',
     label: '文明之城',
     labelEn: 'Culture City',
-    img: '/images/starmap/node-culture.png',
+    img: asset('images/starmap/node-culture.png'),
     x: 74, y: 18,
     glowColor: '#fdcb6e',
   },
@@ -51,7 +52,7 @@ const nodes: Node[] = [
     path: '/writing-wall',
     label: '書寫之牆',
     labelEn: 'Writing Wall',
-    img: '/images/starmap/node-writing.png',
+    img: asset('images/starmap/node-writing.png'),
     x: 20, y: 70,
     glowColor: '#a29bfe',
   },
@@ -60,7 +61,7 @@ const nodes: Node[] = [
     path: '/travel-path',
     label: '旅遊之路',
     labelEn: 'Travel Path',
-    img: '/images/starmap/node-travel.png',
+    img: asset('images/starmap/node-travel.png'),
     x: 76, y: 72,
     glowColor: '#81ecec',
   },
