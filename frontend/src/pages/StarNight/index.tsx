@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import { Helmet } from 'react-helmet-async'
 import OpeningAnimation from '../../components/opening/OpeningAnimation'
 import StarMap from '../../components/starmap/StarMap'
@@ -103,6 +104,14 @@ const interests = [
 ]
 
 export default function StarNight() {
+  const [contentVisible, setContentVisible] = useState(false)
+
+  useEffect(() => {
+    const show = () => setTimeout(() => setContentVisible(true), 900)
+    window.addEventListener('app:interaction', show)
+    return () => window.removeEventListener('app:interaction', show)
+  }, [])
+
   return (
     <>
       <Helmet>
@@ -113,7 +122,7 @@ export default function StarNight() {
       <OpeningAnimation />
       <Navbar />
 
-      <main className="sn-main">
+      <main className={`sn-main${contentVisible ? ' sn-main-visible' : ''}`}>
         {/* Live2D + Chat */}
         <Live2DCanvas />
         <ChatPanel />

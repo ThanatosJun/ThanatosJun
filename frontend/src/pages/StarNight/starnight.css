@@ -3,6 +3,12 @@
 .sn-main {
   position: relative;
   min-height: 100vh;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.sn-main-visible {
+  opacity: 1;
 }
 
 /* ── Hero ── */
