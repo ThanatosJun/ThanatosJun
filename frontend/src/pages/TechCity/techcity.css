@@ -1,0 +1,125 @@
+.tc-page {
+  min-height: 100vh;
+  padding: 7rem 2rem 4rem;
+}
+
+.tc-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ── Header ── */
+.tc-header {
+  margin-bottom: 3rem;
+}
+
+.tc-title-en {
+  display: block;
+  font-family: var(--font-jp);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--text-primary);
+  text-shadow: 0 0 40px var(--glow-purple);
+}
+
+.tc-title-jp {
+  display: block;
+  font-family: var(--font-jp);
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  letter-spacing: 0.3em;
+  margin-top: 0.4rem;
+}
+
+.tc-divider {
+  width: 120px;
+  height: 1px;
+  background: linear-gradient(90deg, var(--accent-purple), transparent);
+  margin-top: 1.2rem;
+}
+
+.tc-subtitle {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.tc-subtitle a {
+  color: var(--accent-blue);
+  text-decoration: none;
+}
+.tc-subtitle a:hover {
+  text-decoration: underline;
+}
+
+/* ── Grid ── */
+.tc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.2rem;
+}
+
+/* ── Card ── */
+.tc-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 1.4rem 1.6rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(108, 92, 231, 0.15);
+  border-radius: 12px;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.2s, background 0.2s, transform 0.2s;
+}
+.tc-card:hover {
+  border-color: rgba(108, 92, 231, 0.45);
+  background: rgba(108, 92, 231, 0.06);
+  transform: translateY(-2px);
+}
+
+.tc-card-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--accent-blue);
+  word-break: break-all;
+}
+
+.tc-card-desc {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+  flex: 1;
+}
+
+.tc-card-footer {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-top: 0.4rem;
+}
+
+.tc-lang-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.tc-lang-label {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.tc-updated {
+  margin-left: auto;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+@media (max-width: 640px) {
+  .tc-page { padding: 5.5rem 1.2rem 3rem; }
+  .tc-grid { grid-template-columns: 1fr; }
+  .tc-title-en { font-size: 2rem; }
+}

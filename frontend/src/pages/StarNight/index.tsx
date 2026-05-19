@@ -2,9 +2,9 @@ import { useEffect, useState } from 'react'
 import { Helmet } from 'react-helmet-async'
 import OpeningAnimation from '../../components/opening/OpeningAnimation'
 import StarMap from '../../components/starmap/StarMap'
-import Live2DCanvas from '../../components/live2d/Live2DCanvas'
 import ChatPanel from '../../components/chat/ChatPanel'
 import Navbar from '../../components/layout/Navbar'
+import BusinessCard from '../../components/BusinessCard/BusinessCard'
 import { asset } from '../../utils/asset'
 import './starnight.css'
 
@@ -12,7 +12,7 @@ const projects = [
   {
     id: 'anime-imprimatura',
     title: 'Anime Imprimatura',
-    titleJp: 'アニメ色彩研究',
+    titleJp: '動漫色彩研究',
     desc: '利用影像處理技術分析動漫作品的底色風格，重現特定動畫師的上色層次。',
     cover: asset('images/anime-imprimatura-cover.png'),
     result: asset('images/anime-imprimatura-result.png'),
@@ -23,7 +23,7 @@ const projects = [
   {
     id: 'cl-graduated',
     title: 'CL Graduated',
-    titleJp: '卒業',
+    titleJp: '畢業',
     desc: '以畢業為主題設計的互動式視覺作品，結合粒子動效與角色演出呈現告別情感。',
     cover: asset('images/cl-graduated-cover.png'),
     link: 'https://github.com/ThanatosJun/CL_Graduated',
@@ -32,26 +32,30 @@ const projects = [
   {
     id: 'love-game',
     title: 'Love Game',
-    titleJp: 'ラブゲーム',
+    titleJp: '戀愛遊戲',
     desc: '以戀愛模擬遊戲為靈感的互動作品，融合對話系統與分支劇情設計。',
     cover: asset('images/love-game.png'),
-    link: 'https://github.com/ThanatosJun/LoveGame',
+    link: 'https://dartpad.dev/?embed=true&run=true&id=24ac5c31c06cfc5ceb54525930e33d41',
+    linkLabel: '遊玩遊戲 →',
     qr: asset('images/qr-lovegame.png'),
-    tags: ['Game Design', 'JavaScript', 'Narrative'],
+    tags: ['Game Design', 'Dart', 'Narrative'],
   },
   {
     id: 'flyshoot',
     title: 'FlyShoot',
-    titleJp: 'フライシュート',
+    titleJp: '飛行射擊',
     desc: '自製的彈幕射擊遊戲，包含自定義敵人 AI、BOSS 機制與音效整合。',
     cover: asset('images/flyshoot-cover.png'),
-    link: 'https://github.com/ThanatosJun/FlyShoot',
+    link: 'https://github.com/ThanatosJun/2025Unity-class0-FlyShoot',
+    linkLabel: 'GitHub →',
+    linkAlt: 'https://thanatosjun.itch.io/flyshoot-v1',
+    linkAltLabel: 'itch.io →',
     tags: ['Game Dev', 'C#', 'Unity'],
   },
   {
     id: '2dcolorgan',
     title: '2D Color GAN',
-    titleJp: 'カラーGAN',
+    titleJp: '上色 GAN',
     desc: '基於 GAN 的 2D 自動上色系統，訓練模型將線稿轉換為完整彩色插圖。',
     cover: asset('images/2dcolorgan-cover.png'),
     link: 'https://github.com/ThanatosJun/2DColorGAN',
@@ -105,6 +109,7 @@ const interests = [
 
 export default function StarNight() {
   const [contentVisible, setContentVisible] = useState(false)
+  const [showCard, setShowCard] = useState(false)
 
   useEffect(() => {
     const show = () => setTimeout(() => setContentVisible(true), 900)
@@ -121,10 +126,9 @@ export default function StarNight() {
 
       <OpeningAnimation />
       <Navbar />
+      {showCard && <BusinessCard onClose={() => setShowCard(false)} />}
 
       <main className={`sn-main${contentVisible ? ' sn-main-visible' : ''}`}>
-        {/* Live2D + Chat */}
-        <Live2DCanvas />
         <ChatPanel />
 
         {/* ── Hero ── */}
@@ -143,8 +147,8 @@ export default function StarNight() {
                 ))}
               </div>
               <div className="sn-hero-cta">
-                <a href="#projects" className="sn-btn-primary">查看作品</a>
-                <a href="#contact" className="sn-btn-ghost">聯絡我</a>
+                <button className="sn-btn-primary" onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}>查看作品</button>
+                <button className="sn-btn-ghost"   onClick={() => setShowCard(true)}>名片</button>
               </div>
             </div>
           </div>
@@ -163,10 +167,10 @@ export default function StarNight() {
           <div className="sn-section-inner">
             <h2 className="sn-section-title">
               <span className="sn-section-en">About</span>
-              <span className="sn-section-jp">自己紹介</span>
+              <span className="sn-section-jp">自我介紹</span>
             </h2>
             <p className="sn-about-tagline">
-              用鏡頭記錄旅途，用耳朵收藏故事，用身體感受世界。
+              幻想是建構世界的藍圖，而我期望成為具現幻想的一員。
             </p>
             <div className="sn-interests">
               {interests.map(it => (
@@ -198,8 +202,18 @@ export default function StarNight() {
                         rel="noopener noreferrer"
                         className="sn-project-link-btn"
                       >
-                        查看專案 →
+                        {('linkLabel' in p ? p.linkLabel : null) ?? '查看專案 →'}
                       </a>
+                      {'linkAlt' in p && p.linkAlt && (
+                        <a
+                          href={p.linkAlt as string}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="sn-project-link-btn sn-project-link-btn--alt"
+                        >
+                          {('linkAltLabel' in p ? p.linkAltLabel : null) ?? '更多 →'}
+                        </a>
+                      )}
                     </div>
                   </div>
                   <div className="sn-project-body">
@@ -262,57 +276,6 @@ export default function StarNight() {
                   </div>
                 </article>
               ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ── Contact ── */}
-        <section className="sn-section sn-section-dark" id="contact">
-          <div className="sn-section-inner sn-contact-inner">
-            <h2 className="sn-section-title">
-              <span className="sn-section-en">Contact</span>
-              <span className="sn-section-jp">連絡先</span>
-            </h2>
-            <p className="sn-contact-desc">歡迎交流合作，或只是打個招呼 👋</p>
-            <div className="sn-contact-links">
-              <a
-                href="https://github.com/ThanatosJun"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="sn-contact-card"
-              >
-                <span className="sn-contact-icon">
-                  <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28">
-                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
-                  </svg>
-                </span>
-                <span>GitHub</span>
-              </a>
-              <a
-                href="https://www.instagram.com/thanatos_jun"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="sn-contact-card"
-              >
-                <span className="sn-contact-icon">
-                  <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28">
-                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
-                  </svg>
-                </span>
-                <span>Instagram</span>
-              </a>
-              <a
-                href="mailto:thanatosjun@gmail.com"
-                className="sn-contact-card"
-              >
-                <span className="sn-contact-icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="28" height="28">
-                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-                    <polyline points="22,6 12,13 2,6" />
-                  </svg>
-                </span>
-                <span>Email</span>
-              </a>
             </div>
           </div>
         </section>

@@ -1,14 +1,54 @@
 /* ── StarNight Page Layout ── */
 
+@keyframes sn-fade-up {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
 .sn-main {
   position: relative;
   min-height: 100vh;
   opacity: 0;
-  transition: opacity 1s ease;
+  transition: opacity 0.6s ease;
 }
 
 .sn-main-visible {
   opacity: 1;
+}
+
+/* Hero 元素預設隱藏，visible 後依序入場；fallback 確保 JS 失敗時仍可見 */
+.sn-main:not(.sn-main-visible) .sn-avatar-wrap,
+.sn-main:not(.sn-main-visible) .sn-greeting,
+.sn-main:not(.sn-main-visible) .sn-name,
+.sn-main:not(.sn-main-visible) .sn-tags,
+.sn-main:not(.sn-main-visible) .sn-hero-cta,
+.sn-main:not(.sn-main-visible) .sn-scroll-hint {
+  opacity: 0;
+}
+
+.sn-main-visible .sn-avatar-wrap {
+  animation: sn-fade-up 0.7s ease both;
+  animation-delay: 0.05s;
+}
+.sn-main-visible .sn-greeting {
+  animation: sn-fade-up 0.7s ease both;
+  animation-delay: 0.2s;
+}
+.sn-main-visible .sn-name {
+  animation: sn-fade-up 0.7s ease both;
+  animation-delay: 0.35s;
+}
+.sn-main-visible .sn-tags {
+  animation: sn-fade-up 0.7s ease both;
+  animation-delay: 0.5s;
+}
+.sn-main-visible .sn-hero-cta {
+  animation: sn-fade-up 0.7s ease both;
+  animation-delay: 0.65s;
+}
+.sn-main-visible .sn-scroll-hint {
+  animation: sn-fade-up 0.7s ease both;
+  animation-delay: 0.85s;
 }
 
 /* ── Hero ── */
@@ -126,6 +166,7 @@
   font-size: 0.9rem;
   font-weight: 600;
   text-decoration: none;
+  cursor: pointer;
   transition: box-shadow 0.3s, transform 0.2s;
   box-shadow: 0 0 20px var(--glow-purple);
 }
@@ -141,6 +182,7 @@
   border-radius: 6px;
   font-size: 0.9rem;
   text-decoration: none;
+  cursor: pointer;
   transition: border-color 0.3s, color 0.3s;
 }
 .sn-btn-ghost:hover {
@@ -285,8 +327,10 @@
   inset: 0;
   background: rgba(10,10,26,0.7);
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  gap: 0.6rem;
   opacity: 0;
   transition: opacity 0.3s;
 }
@@ -305,6 +349,13 @@
 }
 .sn-project-link-btn:hover {
   background: rgba(116,185,255,0.15);
+}
+.sn-project-link-btn--alt {
+  border-color: var(--accent-pink);
+  color: var(--accent-pink);
+}
+.sn-project-link-btn--alt:hover {
+  background: rgba(253,121,168,0.15);
 }
 
 .sn-project-body {
@@ -514,14 +565,57 @@
 }
 
 /* ── Responsive ── */
-@media (max-width: 700px) {
+
+/* Tablet: ≤ 900px */
+@media (max-width: 900px) {
+  .sn-hero-inner {
+    gap: 3rem;
+  }
+  .sn-avatar { width: 160px; height: 160px; }
+  .sn-section { padding: 4.5rem 1.5rem; }
+  .sn-projects-grid {
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  }
+}
+
+/* Mobile: ≤ 640px */
+@media (max-width: 640px) {
+  .sn-hero {
+    padding: 5rem 1.2rem 3rem;
+  }
   .sn-hero-inner {
     flex-direction: column;
-    gap: 2.5rem;
+    gap: 2rem;
     text-align: center;
   }
   .sn-tags, .sn-hero-cta {
     justify-content: center;
   }
-  .sn-avatar { width: 140px; height: 140px; }
+  .sn-avatar { width: 130px; height: 130px; }
+  .sn-avatar-ring { inset: -8px; }
+
+  .sn-section { padding: 3.5rem 1.2rem; }
+  .sn-section-inner { padding: 0; }
+
+  .sn-projects-grid {
+    grid-template-columns: 1fr;
+  }
+  .sn-project-img-wrap { height: 200px; }
+
+  .sn-poems-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sn-interests {
+    gap: 0.6rem;
+  }
+
+  .sn-about-tagline {
+    font-size: 1rem;
+  }
+
+  .sn-btn-primary, .sn-btn-ghost {
+    padding: 0.6rem 1.3rem;
+    font-size: 0.85rem;
+  }
 }

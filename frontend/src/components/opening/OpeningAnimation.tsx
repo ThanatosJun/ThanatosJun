@@ -22,6 +22,11 @@ export default function OpeningAnimation() {
   const [visible, setVisible] = useState(true)
 
   useEffect(() => {
+    document.body.style.overflow = 'hidden'
+    return () => { document.body.style.overflow = '' }
+  }, [])
+
+  useEffect(() => {
     const reset = () => {
       setClicked(false)
       setVisible(true)
@@ -110,7 +115,13 @@ export default function OpeningAnimation() {
     starsRef.current.forEach(s => { s.speed *= 8 })
     window.dispatchEvent(new Event('app:interaction'))
 
-    gsap.timeline({ onComplete: () => setVisible(false) })
+    gsap.timeline({
+      onComplete: () => {
+        document.body.style.overflow = ''
+        window.scrollTo(0, 0)
+        setVisible(false)
+      },
+    })
       .to(centerRef.current, {
         opacity: 0, scale: 0.96, duration: 0.35, ease: 'power2.in',
       })
@@ -149,7 +160,7 @@ export default function OpeningAnimation() {
         </h1>
         <div className="opening-divider" aria-hidden="true" />
         <p className="opening-subtitle">SPACE PORTFOLIO</p>
-        {!clicked && <p className="opening-enter">點擊任意處進入</p>}
+        <p className="opening-enter" style={{ opacity: clicked ? 0 : 1, transition: 'opacity 0.2s' }}>點擊任意處進入</p>
       </div>
     </div>
   )
