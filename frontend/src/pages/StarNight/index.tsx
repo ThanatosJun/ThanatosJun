@@ -15,9 +15,7 @@ const projects = [
     titleJp: '動漫色彩研究',
     desc: '利用影像處理技術分析動漫作品的底色風格，重現特定動畫師的上色層次。',
     cover: asset('images/anime-imprimatura-cover.png'),
-    result: asset('images/anime-imprimatura-result.png'),
     link: 'https://github.com/ThanatosJun/Anime-Imprimatura',
-    qr: asset('images/qr-anime-imprimatura.png'),
     tags: ['Python', 'OpenCV', 'Image Processing'],
   },
   {
@@ -37,7 +35,6 @@ const projects = [
     cover: asset('images/love-game.png'),
     link: 'https://dartpad.dev/?embed=true&run=true&id=24ac5c31c06cfc5ceb54525930e33d41',
     linkLabel: '遊玩遊戲 →',
-    qr: asset('images/qr-lovegame.png'),
     tags: ['Game Design', 'Dart', 'Narrative'],
   },
   {
@@ -60,42 +57,6 @@ const projects = [
     cover: asset('images/2dcolorgan-cover.png'),
     link: 'https://github.com/ThanatosJun/2DColorGAN',
     tags: ['Deep Learning', 'GAN', 'PyTorch'],
-  },
-]
-
-const poems = [
-  {
-    id: 'nianlun',
-    title: '年輪',
-    titleJp: 'ねんりん',
-    img: asset('images/poem-0.png'),
-    lines: [
-      '每一道刻痕都是時間的重量',
-      '樹木用沉默記錄成長',
-      '我用文字丈量那些走過的日子',
-    ],
-  },
-  {
-    id: 'xuecheng',
-    title: '雪城',
-    titleJp: 'ゆきのまち',
-    img: asset('images/poem-1.jpg'),
-    lines: [
-      '城市蓋上一層白毯',
-      '所有聲音都變得輕柔',
-      '只有腳步聲在記憶裡清晰',
-    ],
-  },
-  {
-    id: 'buza',
-    title: '不再',
-    titleJp: 'もはや',
-    img: asset('images/poem-2.jpg'),
-    lines: [
-      '有些告別不需要儀式',
-      '轉身的瞬間就已完成',
-      '而我仍在原地學習放手',
-    ],
   },
 ]
 
@@ -249,34 +210,6 @@ export default function StarNight() {
               />
             </div>
             <p className="sn-video-caption">Halloween City — Motion Graphics Demo</p>
-          </div>
-        </section>
-
-        {/* ── Poetry ── */}
-        <section className="sn-section" id="poetry">
-          <div className="sn-section-inner">
-            <h2 className="sn-section-title">
-              <span className="sn-section-en">Poetry</span>
-              <span className="sn-section-jp">詩作</span>
-            </h2>
-            <div className="sn-poems-grid">
-              {poems.map(poem => (
-                <article key={poem.id} className="sn-poem-card">
-                  <div className="sn-poem-img-wrap">
-                    <img src={poem.img} alt={poem.title} className="sn-poem-img" />
-                  </div>
-                  <div className="sn-poem-body">
-                    <h3 className="sn-poem-title">{poem.title}</h3>
-                    <p className="sn-poem-jp">{poem.titleJp}</p>
-                    <div className="sn-poem-lines">
-                      {poem.lines.map((l, i) => (
-                        <p key={i}>{l}</p>
-                      ))}
-                    </div>
-                  </div>
-                </article>
-              ))}
-            </div>
           </div>
         </section>
 

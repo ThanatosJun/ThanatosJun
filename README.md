@@ -40,11 +40,11 @@ ThanatosJun/  (v2 branch)
 
 | 路由 | 名稱 | 說明 |
 |---|---|---|
-| `/` | 星夜之間 | 個人首頁（Hero、About、Projects、Showreel、Poetry）|
+| `/` | 星夜之間 | 個人首頁（Hero、About、Projects、Showreel）|
 | `/tech-city` | 科技之都 | GitHub 公開 Repositories 列表，附語言色標與更新時間 |
-| `/culture-city` | 文明之城 | 文化內容空間（Phase 2）|
-| `/writing-wall` | 書寫之牆 | 文章/詩作空間（Phase 2）|
-| `/travel-path` | 旅遊之路 | 旅遊記錄空間（Phase 2）|
+| `/writing-wall` | 書寫之牆 | 詩作／小說分類瀏覽 |
+| `/culture-city` | 文明之城 | 文化內容空間（建構中）|
+| `/travel-path` | 旅遊之路 | 旅遊記錄空間（建構中）|
 
 ### 星夜之間（首頁）
 
@@ -52,17 +52,25 @@ ThanatosJun/  (v2 branch)
 - **About**：個人簡介與興趣標籤（攝影、音樂、旅行、遊戲、創作）
 - **Projects**：作品卡片 hover 顯示連結（部分支援雙連結，如 GitHub + itch.io）
 - **Showreel**：影片作品展示
-- **Poetry**：詩作三首，附圖與日文小標
+
+### 書寫之牆（WritingWall）
+- **新詩**：詩作展示，資料來源 `src/data/poems.json`，支援段落縮排（`indent`）
+- **小說**：籌備中
+- 分類 Tab 切換，可隨時新增類別
 
 ### 個人名片 Modal（BusinessCard）
-- 點擊 Hero 區「名片」按鈕開啟
-- 支援 **GitHub / Instagram / Email** 三個平台切換
-  - GitHub / Instagram：顯示 QR Code + 連結
+- 點擊 Hero 區「名片」按鈕開啟，**預設顯示背面**，點擊翻轉至正面
+- 支援 **Web / GitHub / Instagram / Email** 四個平台切換
+  - Web / GitHub / Instagram：顯示 QR Code + 可點擊連結
   - Email：顯示地址 + 一鍵複製
-- **3D 翻轉**：點擊卡片任意空白處翻面，背面顯示原始底圖
+- **3D 翻轉**：點擊卡片任意空白處翻面，附 Web Audio API 合成翻牌音效
 - **抽卡光效**：翻面時觸發彩虹光暈爆閃 + 斜向光條掃過卡面
 - **背面螢光脈衝**：背面持續紫色霓虹邊框動畫
-- **右上角放射光暈**：圖片右上角紫色光球，為名字提供背景光效
+- **右上角放射光暈**：從右上角向外輻射的紫色光球（radius 200px）
+- **遮罩環境光**：左上角環境打光效果
+- **↓ 儲存名片**：名片下方按鈕，以 Canvas API 合成 2:3 PNG 下載
+  - 背景圖 object-fit cover + 多層漸層（頂部、左側、底部）
+  - 平台標籤膠囊 + QR 圓角方框疊在底圖上，無實色色塊
 - 點擊遮罩或關閉按鈕關閉
 
 ### 星圖導覽（StarMap）

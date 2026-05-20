@@ -423,77 +423,6 @@
   letter-spacing: 0.15em;
 }
 
-/* ── Poetry ── */
-.sn-poems-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 1.8rem;
-}
-
-.sn-poem-card {
-  border: 1px solid rgba(108,92,231,0.15);
-  border-radius: 12px;
-  overflow: hidden;
-  background: var(--bg-card);
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-.sn-poem-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 32px rgba(108,92,231,0.12);
-}
-
-.sn-poem-img-wrap {
-  aspect-ratio: 4/3;
-  overflow: hidden;
-}
-
-.sn-poem-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.4s;
-  filter: brightness(0.85) saturate(0.8);
-}
-.sn-poem-card:hover .sn-poem-img {
-  transform: scale(1.03);
-  filter: brightness(0.95) saturate(1);
-}
-
-.sn-poem-body {
-  padding: 1.2rem 1.4rem;
-}
-
-.sn-poem-title {
-  font-size: 1.1rem;
-  font-weight: 600;
-  font-family: var(--font-jp);
-  color: var(--text-primary);
-  margin-bottom: 0.15rem;
-}
-
-.sn-poem-jp {
-  font-size: 0.75rem;
-  color: var(--text-muted);
-  font-family: var(--font-jp);
-  letter-spacing: 0.2em;
-  margin-bottom: 0.8rem;
-}
-
-.sn-poem-lines {
-  display: flex;
-  flex-direction: column;
-  gap: 0.35rem;
-  border-left: 2px solid rgba(108,92,231,0.3);
-  padding-left: 0.9rem;
-}
-
-.sn-poem-lines p {
-  font-size: 0.83rem;
-  color: var(--text-secondary);
-  font-family: var(--font-jp);
-  line-height: 1.7;
-}
-
 /* ── Contact ── */
 .sn-contact-inner {
   text-align: center;
@@ -601,10 +530,6 @@
     grid-template-columns: 1fr;
   }
   .sn-project-img-wrap { height: 200px; }
-
-  .sn-poems-grid {
-    grid-template-columns: 1fr;
-  }
 
   .sn-interests {
     gap: 0.6rem;
