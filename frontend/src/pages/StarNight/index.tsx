@@ -16,7 +16,7 @@ const projects = [
     desc: '利用影像處理技術分析動漫作品的底色風格，重現特定動畫師的上色層次。',
     cover: asset('images/anime-imprimatura-cover.png'),
     link: 'https://github.com/ThanatosJun/Anime-Imprimatura',
-    tags: ['Python', 'OpenCV', 'Image Processing'],
+    tags: ['Image Processing', 'Python', 'Node.js', 'YOLOv8', 'TWCC'],
   },
   {
     id: 'cl-graduated',
@@ -25,7 +25,7 @@ const projects = [
     desc: '以畢業為主題設計的互動式視覺作品，結合粒子動效與角色演出呈現告別情感。',
     cover: asset('images/cl-graduated-cover.png'),
     link: 'https://github.com/ThanatosJun/CL_Graduated',
-    tags: ['Creative Coding', 'p5.js', 'Animation'],
+    tags: ['Graduation Website', 'Vue.js', 'Laravel', 'TWCC'],
   },
   {
     id: 'love-game',
@@ -35,7 +35,7 @@ const projects = [
     cover: asset('images/love-game.png'),
     link: 'https://dartpad.dev/?embed=true&run=true&id=24ac5c31c06cfc5ceb54525930e33d41',
     linkLabel: '遊玩遊戲 →',
-    tags: ['Game Design', 'Dart', 'Narrative'],
+    tags: ['Game Design', 'Dart', 'Flutter'],
   },
   {
     id: 'flyshoot',
@@ -47,7 +47,7 @@ const projects = [
     linkLabel: 'GitHub →',
     linkAlt: 'https://thanatosjun.itch.io/flyshoot-v1',
     linkAltLabel: 'itch.io →',
-    tags: ['Game Dev', 'C#', 'Unity'],
+    tags: ['Game Development', 'Unity', 'C#'],
   },
   {
     id: '2dcolorgan',
@@ -56,16 +56,18 @@ const projects = [
     desc: '基於 GAN 的 2D 自動上色系統，訓練模型將線稿轉換為完整彩色插圖。',
     cover: asset('images/2dcolorgan-cover.png'),
     link: 'https://github.com/ThanatosJun/2DColorGAN',
-    tags: ['Deep Learning', 'GAN', 'PyTorch'],
+    tags: ['2DColorGan', 'CGAN', 'PyTorch'],
   },
 ]
 
 const interests = [
-  { icon: '📷', label: '攝影' },
-  { icon: '🎵', label: '音樂' },
+  { icon: '📷', label: '拍照' },
+  { icon: '🎵', label: '聽音樂' },
   { icon: '✈️', label: '旅行' },
   { icon: '🎮', label: '遊戲' },
   { icon: '🎨', label: '創作' },
+  { icon: '🎾', label: '網球' },
+  { icon: '🔍', label: '其他等待發掘' },
 ]
 
 export default function StarNight() {
