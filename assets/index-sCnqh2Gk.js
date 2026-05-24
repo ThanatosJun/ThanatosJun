@@ -1,0 +1,1 @@
+import{j as e,H as r}from"./index-DqhdYyup.js";import{N as t}from"./Navbar-Wehc6rsD.js";import{S as a}from"./SpacePlaceholder-Dx_KDMw0.js";function m(){return e.jsxs(e.Fragment,{children:[e.jsx(r,{children:e.jsx("title",{children:"ThanatosJun — 文明之城"})}),e.jsx(t,{}),e.jsx(a,{spaceName:"文明之城"})]})}export{m as default};
